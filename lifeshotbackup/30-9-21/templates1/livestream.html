@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- Site Metas -->
+<title>108 healing house</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Site Icons -->
+{% load static %}
+<link href="{% static 'css1/groot5.css'%}" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css1/custom.css'%}">
+<link rel="stylesheet" href="{% static 'css1/customproduct.css'%}">
+<link rel="stylesheet" href="{% static 'css1/productmodel.js'%}">
+<style>
+    @media screen and (min-width: 200px) and (max-width: 567px) and (orientation: landscape) {
+        html {
+            transform: rotate(-90deg);
+            transform-origin: left top;
+            width: 100vh;
+            overflow-x: hidden;
+            position: absolute;
+        }
+    }
+
+    @media screen and (min-width: 200px) and (max-width: 767px) {
+        .sticky {
+            top: 0px;
+            -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9);
+            -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9);
+            right: 0px;
+            position: fixed;
+            width: 50%;
+            z-index: 1;
+            background-color: black;
+            border: 1px solid white;
+            text-align: center;
+            padding-right: 24.5%;
+            padding-left: 24.5%;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1300px) {
+        .sticky {
+            top: 0px;
+            -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9);
+            -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 80%;
+            right: 10px;
+            width: 20%;
+            z-index: 1;
+            background-color: black;
+            border: 1px solid white;
+            text-align: center;
+            padding-right: 0%;
+            padding-left: 0%;
+        }
+    }
+</style>
+
+</head>
+
+<body style="background: linear-gradient(to bottom right, #000000 70%, #5bc0de 30%);">
+    <!-- LOADER -->
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/indo" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img src="{% static 'images/Lifeshots-Suchiwhite.png'%}" alt="" height="50px" width="200px">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                </ul>
+
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-info me-2 glowed">Home</button>
+                    <button type="button" class="btn btn-outline-info me-2 glowed">Community</button>
+                    <button type="button" class="btn btn-outline-info me-2 glowed[\
+                    ]]'/\">Support</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <center>
+        <div class="px-4 py-1 my-4" id="myHeader">
+            <div id="http">
+                <script src="//content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+                <div id="player">
+                </div>
+                <script type="text/javascript">
+                    jwplayer("player").resize(480, 270);
+                    jwplayer('player').setup({
+                        file: 'https://m-c036-j2apps.s.llnwi.net/hls/0098.DDNational.in.m3u8',
+                        playbackRateControls: [0.75, 1, 1.25, 1.5],
+                        title: 'live tv',
+                        width: "80%",
+                        aspectratio: '16:9',
+                        mute: false,
+                        repeat: 'true',
+                        autostart: true,
+                        primary: 'html5',
+                        type: 'm3u8',
+                        setFullscreen: true,
+                        controls: true,
+                        showCode: true,
+                        responsive: true,
+                        skin: {
+                            name: "glow",
+                            active: "red",
+                            inactive: "",
+                            background: ""
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </center>
+    <script>
+        window.onscroll = function () { myFunction() };
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="px-4 py-1 my-4 text-center text-white">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="video" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        </svg>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container">
+            <span class="text-muted">© 2021 Global Network Solutions. All Rights Reserved.</span>
+        </div>
+    </footer>
+    </script>
+</body>
+
+</html>

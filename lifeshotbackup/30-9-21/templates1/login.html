@@ -1,0 +1,123 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block csslink %}<link rel="stylesheet" href="{% static 'css1/groot4.css'%}">{% endblock %}
+{% block title %} Welcome to Lifeshtos {% endblock %}
+
+	
+{% block css %}
+    <style>
+        .login-container{
+			
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+	
+    padding: 5%;
+	background:#000000 ;
+    box-shadow: 0 5px 8px 0 rgba(23, 194, 224, 0.808), 0 9px 26px 0 rgba(212, 209, 10, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: rgb(239, 243, 240);
+}
+.login-form-2{
+	
+    padding: 5%;
+    background: #000000;
+    box-shadow: 0 5px 8px 0 rgba(23, 194, 224, 0.808), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 5%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+</style>
+{% endblock %}
+
+	  {% block body%}
+	  <main>
+		<h1 class="visually-hidden">Login page</h1>
+	
+		<div class="px-4 py-2 my-4 text-center text-white">
+		  <h1 class="display-5 fw-bold" style="font-family:Roboto;">Welcome to LifeShots</h1>
+		</div>
+	  </main>
+	<div class="container login-container">
+		<div class="row">
+			<div class="col-md-6 col-lg-6 col-xs-12 login-form-1 glowed">
+				<h3>Sign In</h3>
+				<form action="/login" method="POST">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Your Email *" value="" />
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="Your Password *" value="" />
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btnSubmit" value="Login" />
+					</div>
+					<div class="form-group text-end">
+						<a href="#" class="ForgetPwd">Forget Password?</a>
+					</div>
+				</form>
+			</div>
+			
+			<div class="col-md-6 col-xs-12 col-lg-6 login-form-2 glowed">
+				<h3>Registration</h3>
+				<form action="/register" method="POST">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Name" type="text" value="" />
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Username" type="text" value="" />
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Mobile No" type="text" value="" />
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="Your Password *" type="password" value="" />
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="Your Password *" type="password" value="" />
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btnSubmit" value="SignUp" />
+					</div>
+					<div class="form-group">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	{% endblock %}

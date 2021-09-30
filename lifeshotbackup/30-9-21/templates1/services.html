@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block csslink %}<link rel="stylesheet" href="{% static 'css1/service.css'%}">{% endblock %}
+{% block title %} {{service.service_name}} - LifeShots {% endblock %}
+{% block body %}
+  <main>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <!--<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+          <img class="bd-placeholder-img" src="{{service.service_main_img}}" alt="" width="100%" height="100%" ><rect width="100%" height="100%" fill="#777"/></img>
+  
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 style="font-family:Roboto;  text-shadow: 2px 2px 8px #000000">{{service.service_name}}</h1>
+              <p style="font-family:Roboto;  text-shadow: 2px 2px 8px #000000">Categorie : {{service.service_categary}}</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="container marketing">
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="" style="color: rgb(218, 218, 218);">{{service.service_desc}}</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <!--<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>-->
+        <img src="{{service.service_images}}" alt="" class="bd_placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">Microsilk</text>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+</main>  
+{% endblock %}

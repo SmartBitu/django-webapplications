@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block csslink %} {% endblock %}
+{% block title %} LifeCom {% endblock %}
+{% block body%}
+
+<style>
+
+
+</style>
+<title>LifeShots</title>
+
+<body>
+    <div class="titled text-dark" style="color: whitesmoke;">
+        <center>
+            <h1><b>Faq</b></h1><br>
+            <h3>(Find your question below or add a New one for response)</h3>
+        </center>
+    </div>
+    <br>
+    <br>
+    <div class="container accordion" id="accordionExample">
+        <div class="accordion-item bg-warning">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body text-dark">
+                    <strong>This is the first item's accordion body. It is shown by default, until the collapse plugin
+                        adds the appropriate classes that we use to style each element. These classes control the
+                        overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                        this with custom CSS or overriding our default variables. It's also worth noting that just about
+                        any HTML can go within the <code>.accordion-body</code>, though the transition does limit
+                        overflow.</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+</body>
+
+{% endblock %}

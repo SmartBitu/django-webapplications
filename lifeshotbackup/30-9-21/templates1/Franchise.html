@@ -1,0 +1,437 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block csslink %}
+<link rel="stylesheet" href="{% static 'css1/testimonials.css'%}"> <link rel="stylesheet" href="{% static 'css1/groot5.css'%}">
+{% endblock %}
+{% block title %} Lifeshots {% endblock %}
+{% block body%}
+
+<style>
+
+.overlay-desc {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #Container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #Container div {
+    position: relative;
+    z-index: 2;
+  }
+
+
+  @media screen and (max-width: 800px) {
+    #Container video {
+      margin-top: -90px;
+
+
+    }
+
+  }
+
+  @media screen and (max-width: 500px) {
+    #Container video {
+
+      margin-top: -150px;
+
+
+    }
+
+  }
+
+  @media screen and (max-width: 650px) {
+    #Container video {
+      margin-top: -100px;
+
+    }
+
+  }
+
+  @media screen and (max-width: 600px) {
+    #Container .container {
+      margin-top: -20px;
+    }
+
+    #Container .container .div {
+      font-size: 2px;
+      width: 20%;
+      height: 20%;
+      padding: 0;
+
+    }
+
+  }
+
+  #Container video {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+    transform: scaleX(1.7);
+    z-index: 1;
+
+  }
+
+  #spin:after {
+    content: "";
+    animation: spin 5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      content: "Cryo Therapy";
+    }
+
+    30% {
+      content: "Float ";
+    }
+
+    65% {
+      content: "Oxygen Shot";
+    }
+
+    100% {
+      content: "CO2 Bath Therapy";
+    }
+  }
+
+  .tit4 {
+    color: #39C0ED
+  }
+
+  /*Since 2018*/
+  
+  @import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
+
+  
+
+  .container-lg{
+  max-width: 500px;
+  max-height: 500px;
+  padding: 2rem;
+  background: #06c1f0;
+  
+  --notchSize: 20px;
+  
+  clip-path: 
+    polygon(
+      0% var(--notchSize), 
+      var(--notchSize) 0%, 
+      calc(100% - var(--notchSize)) 0%, 
+      100% var(--notchSize), 
+      100% calc(100% - var(--notchSize)), 
+      calc(100% - var(--notchSize)) 100%, 
+      var(--notchSize) 100%, 
+      0% calc(100% - var(--notchSize))
+    );
+}
+
+h2 {
+  color: white;
+  margin: 0 0 1rem 0;
+  font-family: 'Birthstone', cursive ;
+}
+p {
+  margin: 0;
+}
+
+  /*xxx*/
+
+
+
+/*Gallery*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500');
+
+.team4 {
+  font-family: "Montserrat", sans-serif;
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.team4 h1, .team4 h2, .team4 h3, .team4 h4, .team4 h5, .team4 h6 {
+  color: #3e4555;
+}
+
+.team4 .font-weight-medium {
+	font-weight: 500;
+}
+
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.team4 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+		font-size: 13px;
+}
+
+.team4 ul li a {
+  color: #8d97ad;
+  padding-right: 15px;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.team4 ul li a:hover {
+  -webkit-transform: translate3d(0px, -5px, 0px);
+  transform: translate3d(0px, -5px, 0px);
+	color: #316ce8;
+}
+
+
+/* Hover Effect */
+.hover15 figure {
+	position: relative;
+}
+.hover15 figure::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(255,255,255,.2);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+.hover15 figure:hover::before {
+	-webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+@-webkit-keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+
+
+  /*xxxxxxx */
+
+
+</style>
+
+
+<main id="Container" style="background-color: var(--neu-blue);">
+    {% load static %}
+    <video class="mr-2" autoplay muted loop style="filter: brightness(40%);">
+      <source src="{% static 'Lifeshots Healthcare-without supers.mp4'%}" type="video/mp4">
+    </video>
+  
+  
+    
+  
+    <div class="container px-5 py-1 my-3 text-center text-white">
+      <img class="img-responsive d-block mx-auto mb-4" style="border-radius: 8px;"
+        src="{% static 'images/white108HH-Logo.png'%}" alt="" width="20%" height="20%">
+      <center>
+        <h1 class="display-5 fw-bold " style="width: -moz-fit-content;color: red;">LET'S CHANGE</h1>
+        <h1 class="display-6 fw-bold" style="width: -moz-fit-content;color: red;">WORLD</h1>
+        <h1 class="display-7 fw-bold" style="width: -moz-fit-content;color: red;">TOGETHER</h1>
+      </center>
+      <div class="col-lg-6 mx-auto mt-2">
+        <h5>
+          <p class=" mb-1 tit4"><span id="spin"></span></p>
+        </h5>
+        <p class="lead mb-4 tit4">The Futuristic Medical Space</p>
+        
+        <p><a href="tel:9820188508" class="btn btn-lg heroBtn mx-auto" style="font-size:18px" id="CTA">Call Now
+            <i class="fas fa-phone text-white ps-2" aria-hidden="true"></i>
+          </a></p>
+      </div>
+    </div>
+  
+  </main>
+
+
+  <div class="row">
+    <div class="col-6">
+  <main>
+    
+    <div class="px-4 py-1 my-4 text-white">
+      <h1 id="services" class="display-4 fw-bold shadow2 mb-0 text-center" style="font-family:Roboto;">Since 2018
+        <center><span class="line"></span></center>
+      </h1>
+    </div>
+  </main>
+  
+  
+  <div class="container-lg">
+      <h2 style="font-family: 'Birthstone', cursive;">Lifeshots is one of its kind “Performance Enhancing Health Centre” that promotes a symphony of non-invasive therapies for Painless & Drugless living.A unique concept health centre introduced for the 1st time in India, established in the year 2018 by- <br>Mr. Krishna Bhat.</h2>
+    </div>
+  </div>
+  
+  </div>
+
+
+  <div class="px-4 py-1 my-4 text-white">
+    <h1 id="services" class="display-4 fw-bold shadow2 mb-0 text-center" style="font-family:Roboto;">Our Team
+      <center><span class="line"></span></center>
+      </h1>
+      </div>
+
+
+
+      <div class="py-5 team4">
+        <div class="zontainer">
+          <div class="row justify-content-center mb-4">
+            <div class="col-md-7 text-center">
+              <h3 class="mb-3">Experienced & Professional Team</h3>
+              <h6 class="subtitle">You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time</h6>
+            </div>
+          </div>
+          <div class="row">
+            <!-- column  -->
+            <div class="col-lg-3 mb-4">
+              <!-- Row -->
+              <div class="row">
+                <div class="col-md-12">
+                  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" alt="wrapkit" class="img-fluid rounded-circle hover15 circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Row -->
+            </div>
+            <!-- column  -->
+            <!-- column  -->
+            <div class="col-lg-3 mb-4">
+              <!-- Row -->
+              <div class="row">
+                <div class="col-md-12">
+                  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" alt="wrapkit" class="img-fluid rounded-circle hover15 circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Row -->
+            </div>
+            <!-- column  -->
+            <!-- column  -->
+            <div class="col-lg-3 mb-4">
+              <!-- Row -->
+              <div class="row">
+                <div class="col-md-12">
+                  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" alt="wrapkit" class="img-fluid rounded-circle hover15 circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Row -->
+            </div>
+            <!-- column  -->
+            <!-- column  -->
+            <div class="col-lg-3 mb-4">
+              <!-- Row -->
+              <div class="row">
+                <div class="col-md-12 ">
+                  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" alt="wrapkit" class="img-fluid rounded-circle hover15 circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                      <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Row -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+     
+          
+      
+{%endblock%}

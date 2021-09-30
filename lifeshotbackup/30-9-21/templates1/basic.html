@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+{% csrf_token %}
+{% load static %}
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="stylesheet" href="https://bit.ly/3h6UqtW">
+
+  <!--  CSS -->
+  <link href="{% static 'css1/groot5.css'%}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css1/custom.css'%}">
+  <link rel="stylesheet" href="{% static 'css1/productinfo.css'%}">
+  {% block csslink %} {% endblock %}
+  <title>{% block title %} {% endblock %}</title>
+  {% block css %}{% endblock %}
+  <style>
+
+
+    ul li a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 16px;
+      margin: 8px 0px;
+      display: block;
+    }
+
+
+
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+    @media screen and (max-width: 1100px) {
+      .topnav a {
+        display: none;
+      }
+
+      .topnav div {
+        display: none;
+      }
+
+      .topnav a.icon {
+
+        float: right;
+        display: block;
+      }
+
+    }
+
+    @media screen and (max-width: 1100px) {
+      .topnav.responsive {
+        position: relative;
+      }
+
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+
+      .topnav.responsive a {
+        float: none;
+        margin: 10px;
+        display: block;
+        text-align: left;
+        margin-left: 0;
+
+      }
+
+      .topnav.responsive div {
+        float: none;
+        display: block;
+        text-align: left;
+
+      }
+    }
+
+    .fa-bars:before {
+      color: #39C0ED;
+      content: "\f0c9"
+    }
+
+    @media screen and (max-width: 1200px) {
+      .numb {
+        font-size: 17px;
+
+      }
+
+    }
+
+    @media screen and (max-width: 600px) {
+      .numb {
+        font-size: 25px;
+
+      }
+
+    }
+
+    .wrapper {
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 50px auto;
+      padding: 30px 40px;
+      box-shadow: 20px 20px 80px rgb(206, 206, 206)
+    }
+
+    .wrapper .h2 {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #1b6176;
+      font-style: italic
+    }
+
+    .wrapper .h4 {
+      font-family: 'Poppins', sans-serif
+    }
+
+    .wrapper .input-field {
+      border-radius: 5px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #1b6176;
+      color: #1b6176
+    }
+
+    .wrapper .input-field:hover {
+      color: #1b6176;
+      border: 1px solid #1b6176
+    }
+
+    .wrapper input {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      width: 100%;
+      padding: 0px 2px;
+      font-family: 'Poppins', sans-serif
+    }
+
+    .wrapper .fa-eye-slash.btn {
+      border: none;
+      outline: none;
+      box-shadow: none
+    }
+
+    .wrapper a {
+      text-decoration: none;
+      color: #1b6176;
+      font-weight: 700
+    }
+
+    .wrapper a:hover {
+      text-decoration: none;
+      color: #1b6176
+    }
+
+    .wrapper .option {
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer
+    }
+
+    .wrapper .option label.text-muted {
+      display: block;
+      cursor: pointer
+    }
+
+    .wrapper .option input {
+      display: none
+    }
+
+    .wrapper .checkmark {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      cursor: pointer
+    }
+
+    .wrapper .option input:checked~.checkmark:after {
+      display: block
+    }
+
+    .wrapper .option .checkmark:after {
+      content: "";
+      width: 13px;
+      height: 13px;
+      display: block;
+      background: #1b6176;
+      position: absolute;
+      top: 48%;
+      left: 53%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: 300ms ease-in-out 0s
+    }
+
+    .wrapper .option input[type="radio"]:checked~.checkmark {
+      background: #fff;
+      transition: 300ms ease-in-out 0s;
+      border: 1px solid #1b6176;
+    }
+
+    .wrapper .option input[type="radio"]:checked~.checkmark:after {
+      transform: translate(-50%, -50%) scale(1)
+    }
+
+    .wrapper .btn.btn-block {
+      border-radius: 20px;
+      background-color: #1b6176;
+      color: #fff
+    }
+
+    .wrapper .btn.btn-block:hover {
+      background-color: #1b6176
+    }
+
+    @media(max-width: 575px) {
+      .wrapper {
+        margin: 10px
+      }
+    }
+
+    @media(max-width:424px) {
+      .wrapper {
+        padding: 30px 10px;
+        margin: 5px
+      }
+
+      .wrapper .option {
+        position: relative;
+        padding-left: 22px
+      }
+
+      .wrapper .option label.text-muted {
+        font-size: 0.95rem
+      }
+
+      .wrapper .checkmark {
+        position: absolute;
+        top: 2px
+      }
+
+      .wrapper .option .checkmark:after {
+        top: 50%
+      }
+
+      .wrapper #forgot {
+        font-size: 0.95rem
+      }
+    }
+
+    .modal-content {
+      background: transparent;
+      border: transparent;
+    }
+
+    /* book appoinment for user  */
+    .carda {
+      width: 400px;
+      background-color: #fff;
+      border: none;
+      border-radius: 12px
+    }
+
+    label.radio {
+      cursor: pointer;
+      width: 100%
+    }
+
+    label.radio input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      pointer-events: none
+    }
+
+    label.radio span {
+      padding: 7px 14px;
+      border: 2px solid #eee;
+      display: inline-block;
+      color: #039be5;
+      border-radius: 10px;
+      width: 100%;
+      height: 48px;
+      line-height: 27px
+    }
+
+    label.radio input:checked+span {
+      border-color: #039BE5;
+      background-color: #81D4FA;
+      color: #fff;
+      border-radius: 9px;
+      height: 48px;
+      line-height: 27px
+    }
+
+    .form-controla {
+      margin-top: 10px;
+      height: 48px;
+      border: 2px solid #eee;
+      border-radius: 10px
+    }
+
+    .form-controla:focus {
+      box-shadow: none;
+      border: 2px solid #039BE5
+    }
+
+    .agree-text {
+      font-size: 12px
+    }
+
+    .terms {
+      font-size: 12px;
+      text-decoration: none;
+      color: #039BE5
+    }
+
+    .confirm-button {
+      height: 50px;
+      border-radius: 10px
+    }
+    .line {
+        width: 70px;
+        height: 5px;
+        background-color: rgb(255, 0, 0);
+        display: flex;
+    }
+    @media (min-width: 1200px) {
+    .container {
+      max-width: 1150px;
+    }
+  }
+
+
+  .aend{
+    float: right;
+    margin-left: 7px;
+    
+  }
+  
+  </style>
+
+</head>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  
+</script>
+
+<body>
+
+  <header class="p-1 bg-dark text-white sticky-top">
+
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img src="{% static 'images/Lifeshots-Suchiwhite.png'%}" alt="" height="80px" width="270px">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        </ul>
+
+
+        <div class="topnav text-end" id="myTopnav">
+          <a class="navbar-brand text-info glowed1" href="/">Home</a>
+          <a class="navbar-brand text-info glowed1" href="/community">Community</a>
+          <a class="navbar-brand text-info glowed1" href="/">Support</a>
+          <a class="navbar-brand text-info glowed1" href="/bloghome">Blogs</a>
+          <a class="navbar-brand text-info glowed1" href="/franchise">Franchise</a>
+          <a class="navbar-brand text-info glowed1" href="/patenttechs">PatentTechs</a>
+          <!-- <a href="" class="btn btn-lg heroBtn mx-auto" data-bs-toggle="modal" data-bs-target="#appoinmentModal" style = "font-size:18px"id="CTA">Book Appoinment
+        </a> -->
+          <a class="btn btn-info me-2 active" data-bs-toggle="modal" data-bs-target="#appoinmentModal">
+            Book Appoinment</a>
+          {% if user.is_authenticated %}
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Hello, {{request.user}}
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" style="color: #000;" href="myaccount">My Account</a></li>
+              <li>
+                <div class="row"><button class="col-6 dropdown-item btn align-items-center"
+                    style="background-color: #039BE5; width: 80px; margin-left: 20px; " href="/#">Cart(<span
+                      id="cart">0</span>)</button><button class="col-6 dropdown-item btn align-items-center mx-1 clearCart"
+                    style="background-color: #039BE5; width: 90px; font-size: 16px; text-align: center"
+                    onclick="clearCart()">Clear Cart</button></div>
+              </li>
+
+              <li><a class="dropdown-item" style="color: #000;" href="#">Something else here</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item btn align-items-center"
+                  style="background-color: rgb(250, 55, 104); width: 100px; margin-left: 45px;"
+                  href="/logout">Logout</a></li>
+            </ul>
+          </div>
+          {% else %}
+          <!-- <a href="" class=" btn btn-lg heroBtn mx-auto" data-bs-toggle="modal" data-bs-target="#appoinmentModal" style = "font-size:18px;"id="CTA">Login
+            
+        </a> -->
+          <a class="btn btn-info me-2 active" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Login</a>
+
+          {% endif%}
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  <!-- Modal -->
+  <!-- user login form -->
+  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered text-white">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="wrapper bg-white">
+            <button type="button" style="align-items:right;" class="btn-close bg-light" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+            <center><div><img style="align-items: center" src="{% static 'images/Lifeshots-Suchi.png'%}" alt="" height="80px"
+                width="270px"></div></center>
+            <div class="h4 text-muted text-center pt-2">Enter your login details</div>
+            <form class="pt-3" action="/login" method="POST">{% csrf_token %}
+              <div class="form-group py-2">
+                <div class="input-field"> <span class="far fa-user p-2"></span> <input class="input1" type="text"
+                    placeholder="Username" name="loginusername" required class=""> </div>
+              </div>
+              <div class="form-group py-1 pb-2">
+                <div class="input-field"> <span class="fas fa-lock p-2"></span> <input class="input1" type="password"
+                    placeholder="Enter your Password" name="loginpass" required class=""> <button
+                    class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span>
+                  </button> </div>
+              </div>
+              <div class="d-flex align-items-start">
+                <div class="remember"> <label class=" option text-muted"> Remember me <input class=" input1"
+                      type="radio" name="radio"> <span class=" checkmark"></span> </label> </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="d-flex flex-row-reverse"> <a href="#" class="text-end" id="forgot">Forgot Password?</a>
+                </div>
+              </div> <button class="btn btn-block text-center my-3">Log in</button>
+              <div class="text-center pt-3 text-muted">Not a member? <a style="color:#1b6176" type="button"
+                  data-bs-toggle="modal" data-bs-target="#signModal" data-bs-dismiss="modal" aria-label="Close">Sign
+                  up</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- User Registration form -->
+  <div class="modal fade" id="signModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered text-white">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="wrapper bg-white">
+            <button type="button" style="align-items:right;" class="btn-close bg-light" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+              <center><div><img style="align-items: center" src="{% static 'images/Lifeshots-Suchi.png'%}" alt="" height="80px"
+                width="270px"></div></center>
+            <div class="h4 text-muted text-center pt-2">Registration</div>
+            <form class="pt-3" action="/signup" method="POST">{% csrf_token %}
+              <div class="form-group py-2">
+                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text"
+                    placeholder="First Name" name="fname" required class=""> </div>
+              </div>
+              <div class="form-group py-2">
+                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text"
+                    placeholder="Last Name" name="lname" required class=""> </div>
+              </div>
+              <div class="form-group py-2">
+                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" placeholder="Email"
+                    name="email" required class=""> </div>
+              </div>
+              <div class="form-group py-2">
+                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text"
+                    placeholder="Username" name="username" required class=""> </div>
+              </div>
+              <div class="form-group py-2">
+                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text"
+                    placeholder="Mobile Number" name="mobno" required class=""> </div>
+              </div>
+              <div class="form-group py-1 pb-2">
+                <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password"
+                    placeholder="Choose Password *" required class="" name="password"> <button
+                    class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span>
+                  </button> </div>
+              </div>
+              <div class="form-group py-1 pb-2">
+                <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password"
+                    placeholder="Confirm Password *" required class="" name="cpassword"> <button
+                    class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span>
+                  </button> </div>
+              </div>
+              <button class="btn btn-block text-center w-100 my-3">Log in</button>
+              <div class="text-center pt-3 text-muted" data-bs-toggle="modal" data-bs-target="#loginModal"
+                data-bs-dismiss="modal" aria-label="Close">Already a membar? <a style="color:#1b6176" type="button">Sign
+                  In</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- book appoiment template  and it's time script-->
+
+  <script>
+    var $jq = jQuery.noConflict();
+    $jq(function () {
+      $('#datetimepicker1').datetimepicker();
+    });
+  </script>
+
+  <div class="modal fade" id="appoinmentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered text-white">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form action="/appoinment" method="POST">
+            <div class="container mt-5 mb-5 d-flex justify-content-center">
+
+              <div class="carda px-1 py-4">
+
+                <div class="card-body text-dark">
+                  <button type="button" style="align-items:right;" class="btn-close bg-light" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                    <center><div><img style="align-items: center" src="{% static 'images/Lifeshots-Suchi.png'%}" alt="" height="80px"
+                      width="270px"></div></center>
+                  <h6 class="information mt-4">Please provide following information for booking appoinment</h6>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <div class="input-group"> <input class="form-controla" type="text" placeholder="Name"
+                            style="width: 100%;" name="name"> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <div class="input-group"> <input class="form-controla" type="text" placeholder="Mobile"
+                            style="width: 100%;" name="mobno"> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <div class="input-group"> <input class="form-controla" type="text" placeholder="Email ID"
+                            style="width: 100%;" name="email"> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <select class="form-controla" style="width: 100%;">
+                          <option value="" class="text-muted" selected="selected">Select Service</option>
+                          <optgroup label="Physiotherapy">
+                            <option value="oranges1">some option</option>
+                            <option value="oranges2">some option</option>
+                            <option value="oranges3">some option</option>
+                          </optgroup>
+                          <option value="Microsilk">Microsilk</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <div id='datetimepicker1'>
+                          <input type='date' class="form-controla" placeholder="Date & Time" style="width: 100%;"
+                            required name="date" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By Booking this
+                      appointment you agree to the</small> <a href="#" class="terms">Terms & Conditions</a> </div>
+                  <button class="btn btn-primary btn-block w-100 confirm-button">Confirm</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% block body %} {% endblock %}
+
+
+  <div class="bg-dark pt-5 mt-0 text-muted" style="z-index: 1;">
+    <div class="container" style="z-index: 1;">
+      <div class="row" style="z-index: 1;">
+        <div class="col-sm-6 col-md-3 ">
+          <div class="widget-title">
+            <h3 class="mb-4 fs-5 text-muted text-uppercase">Customer support</h3>
+          </div>
+          <a href="tel:9820188508">
+            <h4 class="text-info numb">+91-98201-88508</h4>
+          </a>
+          <p class="text-muted m-0 mt-3">Mon. - Fri. <b>10:00 - 7:00</b></p>
+          <p class="text-muted">Sat. - Sun. <b>Off</b></p>
+        </div>
+        <div class="col-sm-6 col-md-3 text-muted">
+          <div class="widget-title">
+            <h3 class="mb-4 fs-5 text-uppercase">Our services</h3>
+          </div>
+          <ul>
+            <li><a class="text-muted" href="">Payment</a></li>
+            <li><a class="text-muted" href="#">Order tracking</a></li>
+            <li><a class="text-muted" href="#">Exchanges & returns</a></li>
+            <li><a class="text-muted" href="#">Delivery</a></li>
+            <li><a class="text-muted" href="#">Terms & conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="widget-title">
+            <h3 class="mb-4 fs-5 text-muted text-uppercase">About Shop</h3>
+          </div>
+          <ul>
+            <li><a class="text-muted" href="#">About</a></li>
+            <li><a class="text-muted" href="#">Blog</a></li>
+            <li><a class="text-muted" href="#">Contact</a></li>
+            <li><a class="text-muted" href="#">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-md-3" style="z-index: 1;">
+          <div class="widget-title">
+            <h3 class="mb-4 fs-5 text-muted text-uppercase">Newsletter signup</h3>
+          </div>
+          <form class="row row-cols-lg-auto g-3 align-items-center" action="subscribe" method="POST">{% csrf_token %}
+            <div class="col-12">
+              <label class="visually-hidden">Username email</label>
+              <div class="input-group">
+                <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                <input type="text" class="form-control" name="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-outline-info w-100 glowed">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="footer mt-auto py-3" style="z-index: 1;">
+      
+      <div class="container">
+        
+        
+        <span class="text-muted">© 2021 Lifeshots Healthcare Solutions LLP. All Rights Reserved.</span>
+          
+        <!-- Facebook -->
+        <i class="fab fa-facebook-f aend" ></i>
+
+        <!-- Twitter -->
+        <i class="fab fa-twitter aend"></i>
+
+        <!-- Google -->
+        <i class="fab fa-google aend"></i>
+
+        <!-- Instagram -->
+        <i class="fab fa-instagram aend"></i>
+
+        <!-- Linkedin -->
+        <i class="fab fa-linkedin-in aend"></i>
+
+        <!-- Pinterest -->
+        <i class="fab fa-pinterest aend"></i>
+
+        <!-- Vkontakte -->
+        <i class="fab fa-vk aend"></i>
+
+        <!-- Stack overflow -->
+        <i class="fab fa-stack-overflow aend"></i>
+
+        <!-- Youtube -->
+        <i class="fab fa-youtube aend"></i>
+
+        <!-- Slack -->
+        <i class="fab fa-slack-hash aend"></i>
+
+        <!-- Github -->
+        <i class="fab fa-github aend"></i>
+
+        <!-- Dribbble -->
+        <i class="fab fa-dribbble aend"></i>
+
+        <!-- Reddit -->
+        <i class="fab fa-reddit-alien aend"></i>
+
+        <!-- Whatsapp -->
+        <i class="fab fa-whatsapp aend"></i>
+      </div>
+    </footer>
+  </div>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1:  Bundle with Popper -->
+  <script src="{% static 'css1/groot5.min.js'%}"></script>
+  <script src="{% static 'css1/jquery.min.js'%}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  {% block js %} {% endblock %}
+  <script>
+    //find out cart items from local storage
+    if (localStorage.getItem('cart') == null) {
+      var cart = {};
+    }
+    else {
+      cart = JSON.parse(localStorage.getItem('cart'));
+      document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    }
+    
+    // if  the  add to cart button is clicked , add/ increment ot items
+    $('.cart').click(function () {
+      var idstr = this.id.toString();
+      if (cart[idstr] != undefined) {
+        cart[idstr] = cart[idstr] + 1;
+      }
+      else {
+        cart[idstr] = 1;
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    });
+    function clearCart() {
+      console.log('localstorgeclear here')
+      localStorage.clear();
+      alert("Product is added to cart");
+}
+
+
+  </script>
+</body>
+
+</html>

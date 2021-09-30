@@ -1,0 +1,152 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block csslink %}
+<link rel="stylesheet" href="{% static 'css1/bloghome.css'%}">
+<link rel="stylesheet" href="{% static 'css1/upperimagecircle.css'%}">
+
+
+
+{% endblock %}
+{% block title %} Blog {% endblock %}
+{% block body%}
+<style>
+  .fa:hover {
+    color: rgb(255, 0, 111);
+  }
+
+  .glow2:hover{
+    color:black
+  }
+  .glow2{
+    color:silver
+  }
+</style>
+
+
+<main id="Container">
+  {% load static %}
+  <img src="{% static 'images/health2.jpg'%}"
+    style="height: 80%; width: 80%; margin:auto; left: 10%; filter: brightness(48%);">
+  <!-- <video class="mr-2" autoplay muted loop style="filter: brightness(40%);">
+    <source src="{% static 'Lifeshots Healthcare-without supers.mp4'%}" type="video/mp4">
+  </video> -->
+
+
+  <!-- 
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+      <div class="wave wave4"></div> -->
+
+
+  <div class="container px-5 m-0 text-center text-white">
+
+    <center>
+      <div class=" text-center text-white">
+        <h1 id="services" class="display-2 fw-bold shadow2 text-white" style="font-family:Roboto;">LifeShot Blog<br>is a place to <br>write, read, and connect
+        </h1>
+        <center><span class="line"></span></center>
+      </div>
+
+    </center>
+    <p><a href="tel:9820188508" class="mt-4 btn btn-lg heroBtn mx-auto" style="font-size:18px" id="CTA">Call Now
+        <i class="fas fa-phone text-white ps-2" aria-hidden="true"></i>
+      </a></p>
+
+  </div>
+</main>
+
+<div class="container row" style="margin: auto;">
+  <div class="col-md-4 mb-3">
+    <h2 class="text-dark">LifeShots</h2>
+    <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui similique ratione magni quam
+      beatae, possimus dignissimos fugit maiores commodi vero.</p>
+    <hr class="text-dark">
+    <p class="text-muted mb-0">FOLLOWERS</p>
+    <p class="text-dark">11.6K</p>
+    <p class="text-muted mb-0">ELSEWHERE</p>
+    <i class="fa fa-envelope glow2"></i>
+    <i class="fab fa-instagram glow2 mx-2"></i>
+    <i class="fab fa-facebook-f glow2"></i>
+    <a href="" ><p class="text-muted mt-1">See the Latest One</p></a>
+  </div>
+  <div class="col-md-8">
+    <div class="bg-white mb-4"
+      style="box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;">
+      <div class="p-4">
+        <div>
+          <a href="">
+          <img src="{% static 'images/avatarlog copy.png'%}"
+            style="border-radius: 50%; border: 1px solid black; object-fit: cover; filter: drop-shadow(2px 3px 2px #000000c8); margin-top: -30px;" height="50px" width="50px"
+            alt="">
+          <div class="ms-2" style="display:inline-block;">
+            <p class="text-info" style="margin-bottom:0px;">by Lifeshots</p>
+            <p class="text-muted">Sep 28 - 8 min read</p>
+          </div>
+          </a>
+
+        </div>
+        
+        <div class="mt-3">
+          <a href="blog">
+          <div style="height: 15vh;width: 100%;">
+            <img src="{% static 'images/health2.jpg'%}" style="border: 1px solid rgba(0, 0, 0, 0.303);object-fit: cover;width: 100%;
+          height: 100%;" alt="">
+          </div></a>
+          <div class="text-dark mt-4">
+            <a href="blog">
+            <h3 class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <p class="text-muted my-0">Lorem ipsum, dolor sit amet consectetur adipisicing...</p>
+            <p class="text-muted">Read more...</p></a>
+            <div>
+              <i onclick="myFunction(this)" class="fa fa-heart ms-2" style="font-size:25px; "></i>
+                <p class="text-muted" style="display: inline-block;">222</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white my-4"
+      style="box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;">
+      <div class="p-4">
+        <div>
+          <img src="{% static 'images/Lifeshots-Suchi.png'%}"
+            style="border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.297); vertical-align: middle;filter: drop-shadow(2px 3px 2px #000000c8);" height="50px" width="50px"
+            alt="">
+          <div style="display:inline-block;">
+            <p class="text-info" style="margin-bottom: 5px;">by Lifeshots</p>
+            <p class="text-muted">Sep 28 - 8 min read</p>
+          </div>
+
+        </div>
+        <div class="mt-3">
+          <div style="height: 15vh;width: 100%;">
+            <img src="{% static 'images/Lifeshots-Suchi.png'%}" style="border: 1px solid rgba(0, 0, 0, 0.303);object-fit: cover;width: 100%;
+          height: 100%;" alt="">
+          </div>
+          <div class="text-dark mt-4">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <p class="text-muted my-0">Lorem ipsum, dolor sit amet consectetur adipisicing....</p>
+            <p class="text-muted">Read more....</p>
+            <div>
+              <i onclick="myFunction(this)" class="fa fa-heart ms-2" style="font-size:25px; "></i>
+                <p class="text-muted" style="display: inline-block;">222</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+
+
+</div>
+<script>
+  function myFunction(x) {
+    x.classList.toggle("fa fa-heart red-color");
+  }
+</script>
+{%endblock%}

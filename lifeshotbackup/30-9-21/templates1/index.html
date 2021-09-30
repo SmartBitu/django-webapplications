@@ -1,0 +1,1203 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block csslink %}
+<!-- <link rel="stylesheet" href="{% static 'css1/testimonials.css'%}"> -->
+<link rel="stylesheet" href="{% static 'css1/groot5.css'%}">
+<link rel="stylesheet" href="{% static 'css1/groot5.css'%}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@710&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %} Lifeshots {% endblock %}
+{% block body%}
+
+
+
+<style>
+  .overlay-desc {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #Container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #Container div {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* #Container:before{
+  content: '';
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: violet;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  transform : scaleX(1.7);
+
+} */
+  @media screen and (max-width: 800px) {
+    #Container video {
+      margin-top: -90px;
+
+
+    }
+
+  }
+
+  @media screen and (max-width: 500px) {
+    #Container video {
+
+      margin-top: -150px;
+
+
+    }
+
+  }
+
+  @media screen and (max-width: 650px) {
+    #Container video {
+      margin-top: -100px;
+
+    }
+
+  }
+
+  @media screen and (max-width: 600px) {
+    #Container .container {
+      margin-top: -20px;
+    }
+
+    #Container .container .div {
+      font-size: 2px;
+      width: 20%;
+      height: 20%;
+      padding: 0;
+
+    }
+
+  }
+
+  #Container video {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+    transform: scaleX(1.7);
+    z-index: 1;
+
+  }
+
+
+
+  #spin:after {
+    content: "";
+    animation: spin 5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      content: "Cryo Therapy";
+    }
+
+    30% {
+      content: "Float ";
+    }
+
+    65% {
+      content: "Oxygen Shot";
+    }
+
+    100% {
+      content: "CO2 Bath Therapy";
+    }
+  }
+
+  .tit4 {
+    color: #39C0ED
+  }
+
+  @media screen and (max-width: 600px) {
+    .tit4 {
+      color: black;
+    }
+  }
+
+  /*Customer Counter*/
+
+  .title {
+    color: #fa9746;
+    margin-bottom: 30px;
+    position: relative
+  }
+
+  .title::before {
+    position: absolute;
+    left: -29px;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: #7499f1;
+    box-shadow: 0px 4px 4px 0px #aaa;
+    border-radius: 4px;
+    content: ''
+  }
+
+  .title::after {
+    position: absolute;
+    left: -19px;
+    top: 25px;
+    height: 14px;
+    width: 14px;
+    transform: rotate(45deg);
+    background-color: #7499f1;
+    box-shadow: 0px 4px 4px 0px #aaa;
+    border-radius: 4px;
+    content: ''
+  }
+
+  .services {
+    padding: 40px;
+    position: relative
+  }
+
+  .services .square {
+    height: 100px;
+    width: 100px;
+    margin: 30px auto 40px;
+    position: relative;
+    border-radius: 15px;
+    transform: rotate(45deg);
+    padding: 10px;
+    background-color: #1247ce;
+    box-shadow: 0px 0px 27px 0px #ccc;
+    border: 2px dotted #eaf3fa
+  }
+
+  .square i {
+    transform: rotate(315deg);
+    display: block;
+    color: #eaf3fa;
+    font-size: 40px;
+    padding-top: 17px;
+    padding-right: 14px
+  }
+
+  .services .square::before {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #fa9746;
+    content: ''
+  }
+
+  .services .square::after {
+    position: absolute;
+    left: 50px;
+    top: 66px;
+    width: 1px;
+    height: 88%;
+    background-color: #fa9746;
+    content: '';
+    transform: rotate(90deg)
+  }
+
+  .services .serv .num {
+    width: 60px;
+    height: 60px;
+    background-color: #7499f1;
+    box-shadow: 0px 0px 15px 0px #00a9d3;
+    margin: -38px auto 15px auto;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    padding-top: 7px;
+    border: 1px dashed
+  }
+
+  .services .serv h5 {
+    color: #fa9746
+  }
+
+  .services .serv p {
+    color: #777
+  }
+
+  .services .serv hr {
+    width: 30px;
+    border-top: 3px solid rgb(0 169 211)
+  }
+
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1150px;
+    }
+  }
+</style>
+
+
+
+
+
+<main id="Container" style="background-color: var(--neu-blue);">
+  {% load static %}
+  <video class="mr-2" autoplay muted loop style="filter: brightness(40%);">
+    <source src="{% static 'Lifeshots Healthcare-without supers.mp4'%}" type="video/mp4">
+  </video>
+
+
+  
+
+  <div class="container px-5 py-1 my-3 text-center text-white">
+    <img class="img-responsive d-block mx-auto mb-4" style="border-radius: 8px;"
+      src="{% static 'images/white108HH-Logo.png'%}" alt="" width="20%" height="20%">
+    <center>
+      <h1 class="display-5 fw-bold " style="width: -moz-fit-content;">WALK BEYOND</h1>
+      <h1 class="display-6 fw-bold" style="width: -moz-fit-content;">THE BOUNDARIES</h1>
+      <h1 class="display-7 fw-bold" style="width: -moz-fit-content;">OF ORDINARY REALITY</h1>
+    </center>
+    <div class="col-lg-6 mx-auto mt-2">
+      <h5>
+        <p class=" mb-1 tit4"><span id="spin"></span></p>
+      </h5>
+      <p class="lead mb-4 tit4">The Futuristic Medical Space</p>
+      
+      <p><a href="tel:9820188508" class="btn btn-lg heroBtn mx-auto" style="font-size:18px" id="CTA">Call Now
+          <i class="fas fa-phone text-white ps-2" aria-hidden="true"></i>
+        </a></p>
+    </div>
+  </div>
+
+</main>
+<section class="description" id="science">
+  <div class="scienceHeading">
+    <span><img src="public/images/partition image white.png" alt="Partition Image"></span>
+    <h2 style="font-size: 30px;">Services</h2>
+    <span><img src="public/images/partition image white.png" alt="Partition Image"
+        style="transform: rotate(180deg); padding-top: 19px"></span>
+  </div>
+  <div class="container" id="descripts">
+    <div class="row rowExtra">
+
+      <div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-5 mt-sm-0 descript">
+        <div class="featureCard" id="featureCard-1">
+          <div class="imgBx">
+            <img src="{% static 'images/services12.png'%}">
+          </div><a href="serviceshome">
+            <div class=" contentBx">
+              <h2>Treatments</h2>
+              <p>
+                Measure your brain waves using EEG sensors and get real time auditory feedback.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-5 mt-sm-0 descript">
+        <div class="featureCard" id="featureCard-2">
+          <div class="imgBx">
+            <img src="{% static 'images/healthshot.png'%}">
+          </div><a href="product">
+            <div class=" contentBx">
+              <h2>Health Shots</h2>
+              <p>
+                We have the ability to structurally change our brain network through regular
+                practice
+                irrespective of age.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-5 mt-lg-0 descript">
+        <div class="featureCard" id="featureCard-3">
+          <div class="imgBx">
+            <img src="{% static 'images/oxybar.png'%}">
+          </div><a href="unicafe">
+            <div class=" contentBx">
+              <h2>O<sub>2</sub> Bar & HealthCafe</h2>
+              <p>Rewire your brain to gain attention and awareness using different meditation
+                techniques.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-5 mt-lg-0 descript">
+        <div class="featureCard" id="featureCard-4">
+          <div class="imgBx">
+            <img src="{% static 'images/penttech.png'%}">
+          </div><a href="petanttech">
+            <div class="contentBx">
+              <h2>PetantTech</h2>
+              <p>There are few things that stimulate the brain the way music does</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- call for action section -->
+<section class="neuphonyHelps my-3">
+  <div class="neuphonyHelpsHeading">
+    <span><img src="public/images/partition image black.png" alt="Partition Image"></span>
+    <h2>Call for Action! Free Consultation</h2>
+    <span><img src="public/images/partition image black.png" alt="Partition Image"
+        style="transform: rotate(180deg); padding-top: 19px"></span>
+  </div>
+  <div class="neuphonyHelpsCardsContainer">
+    <div class="container">
+      <div class="row rowExtra">
+        <div class="col-6 col-sm-4 mt-md-4 text-center cardSet">
+          <div class="hover hover-4 text-white"><img src="{% static 'images/doctor_01.jpg'%}" alt="sleep better"
+              class="img-fluid" style="filter: brightness(70%);">
+            <div class="hover-overlay"></div>
+            <div class="hover-4-content">
+              <h3 class="hover-4-title mb-0"><span class="font-weight-light">Pain Management
+                </span></h3>
+              <p class="hover-4-description mb-0 small">Quality of Sleep determines
+                how you feel and perform every day, and sleep deprivation can make certain
+                regions of brain take mini naps causing mental lapses and cognitive
+                problems.</p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-sm hoverBtn" data-bs-toggle="modal"
+                data-bs-target="#getQualitySleep">
+                Read more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="getQualitySleep" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body modalImage d-flex"
+                          style="background-image: url('./public/images/howNeuphonyHelps/vii_4ii_1_sleep better.png'); background-color: white;">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body d-flex align-items-center" style="background-color: white;">
+                          <div class="modalText text-dark text-center">
+                            <p>Quality of Sleep determines how you feel and perform
+                              every day,
+                              and sleep
+                              deprivation can make
+                              certain regions of brain take mini naps causing
+                              mental lapses
+                              and cognitive
+                              problems. </p>
+                            <p>By creating a brain map of your cognitive state
+                              Neuphony helps
+                              you</p>
+                            <ul>
+                              <li>Detach from the outer world.</li>
+                              <li>Calm the self-talk.</li>
+                              <li>Follow your circadian rhythm.</li>
+                              <li>Enhance your concentration and energy levels.
+                              </li>
+                            </ul>
+                            <a href="sleep.html" class="btn btn-primary exploreBtn">Explore
+                              more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 mt-md-4 text-center">
+          <div class="hover hover-4 text-white"><img src="{% static 'images/doctor_01.jpg'%}" alt="sleep better"
+              class="img-fluid" style="filter: brightness(70%);">
+            <div class="hover-overlay"></div>
+            <div class="hover-4-content">
+              <h3 class="hover-4-title mb-0"><span class="font-weight-light">Physio Therapy
+                </span></h3>
+              <p class="hover-4-description mb-0 small">Getting distracted is easy for our mind,
+                all it takes is one stray thought.
+                Distractions eat up so much of our time and mental resources that either we
+                are left feeling overwhelmed or incompetent. </p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-sm hoverBtn" data-bs-toggle="modal" data-bs-target="#improveFocus">
+                Read more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="improveFocus" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body modalImage d-flex"
+                          style="background-image: url('./public/images/howNeuphonyHelps/vii_4ii_2_improve focus.png');">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body d-flex align-items-center" >
+                          <div class="modalText text-dark text-center">
+                            <p>Getting distracted is easy for our mind, all it takes
+                              is one
+                              stray thought.
+                              Distractions eat up so much of our time and mental
+                              resources
+                              that either we
+                              are left feeling overwhelmed or incompetent. </p>
+                            <p>By creating a brain map of your cognitive state
+                              Neuphony helps
+                              you</p>
+                            <ul>
+                              <li>Identify these distractions, when they happen.
+                              </li>
+                              <li>Control your attention consciously using Focus
+                                exercises.
+                              </li>
+                              <li>Real time feedback to help you stay on your
+                                point of focus.
+                              </li>
+                              <li>It’s like going to a mental gym and training
+                                your brain
+                                muscles to help
+                                you concentrate.</li>
+                            </ul>
+                            <a href="focus.html" class="btn btn-primary exploreBtn">Explore
+                              more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 mt-md-4 text-center cardSet">
+          <div class="hover hover-4 text-white"><img src="{% static 'images/green-tea-500x500.jpg'%}" alt=""
+              class="img-fluid cardImg">
+            <div class="hover-overlay"></div>
+            <div class="hover-4-content">
+              <h3 class="hover-4-title mb-0"><span class="font-weight-light">Reduce
+                </span>Anxiety and Stress</h3>
+              <p class="hover-4-description mb-0 small">We are evolved in a way that we are
+                susceptible to self-induced stress. If
+                our brain thinks of a past traumatic experience our body experiences the
+                event as if it is happening right now, and anxiety is our body’s response to
+                stress.</p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-sm hoverBtn" data-bs-toggle="modal" data-bs-target="#reduceStress">
+                Read more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="reduceStress" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body modalImage d-flex"
+                          style="background-image: url('./public/images/howNeuphonyHelps/vii_4ii_3_reduce stress and anxiety.png');">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body d-flex align-items-center">
+                          <div class="modalText text-dark text-center">
+                            <p>We are evolved in a way that we are susceptible to
+                              self-induced
+                              stress. If
+                              our brain thinks of a past traumatic experience our
+                              body
+                              experiences the
+                              event as if it is happening right now, and anxiety
+                              is our body’s
+                              response to
+                              stress.</p>
+                            <p>Neuphony creates a brain map of your cognitive state
+                              to help you
+                            </p>
+                            <ul>
+                              <li>Identify the emotional triggers.</li>
+                              <li>Break the cycle of negative
+                                thoughts and feelings feeding off each other.
+                              </li>
+                              <li>Mindfulness exercises, which help you observe
+                                all your
+                                thoughts without
+                                getting attached to a particular one.</li>
+                              <li>Auditory feedback if you get stuck on a thought
+                                and couldn’t
+                                let go.
+                              </li>
+                            </ul>
+                            <a href="stress.html" class="btn btn-primary exploreBtn">Explore
+                              more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 mt-md-4 text-center cardSet">
+          <div class="hover hover-4 text-white"><img src="{% static 'images/green-tea-500x500.jpg'%}" alt=""
+              class="img-fluid cardImg">
+            <div class="hover-overlay"></div>
+            <div class="hover-4-content">
+              <h3 class="hover-4-title mb-0"><span class="font-weight-light">Develope
+                </span>Gratitude</h3>
+              <p class="hover-4-description mb-0 small">Feeling gratitude is one of the most
+                important trait of Emotional
+                Intelligence and also towards building a better community. By showing
+                Gratitude you not only improve your leadership skills, but you also help
+                build an empathetic and Resilient community.</p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-sm hoverBtn" data-bs-toggle="modal"
+                data-bs-target="#developeGratitude">
+                Read more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="developeGratitude" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body modalImage d-flex"
+                          style="background-image: url('./public/images/howNeuphonyHelps/vii_4ii_4_develope gratitude.png');">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body d-flex align-items-center">
+                          <div class="modalText text-dark text-center">
+                            <p>Feeling gratitude is one of the most important trait
+                              of Emotional
+                              Intelligence and also towards building a better
+                              community. By
+                              showing
+                              Gratitude you not only improve your leadership
+                              skills, but you
+                              also help
+                              build an empathetic and Resilient community.</p>
+                            <p>Neuphony creates a brain map of your cognitive state
+                              to helps you
+                            </p>
+                            <ul>
+                              <li>Identify emotional networks in your brain.</li>
+                              <li>Train the emotional networks in your brain using
+                                loving
+                                kindness
+                                meditation techniques.</li>
+                              <li>Make sure you feel the emotion rather than just
+                                thinking
+                                about them.
+                              </li>
+                              <li>Improve your Emotional Intelligence and help in
+                                overall
+                                growth.</li>
+                            </ul>
+                            <a href="gratitude.html" class="btn btn-primary exploreBtn">Explore
+                              more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 mt-md-4 text-center">
+          <div class="hover hover-4 text-white"><img
+              src="public/images/howNeuphonyHelps/vii_4ii_6_attain inner peace.png" alt="" class="img-fluid cardImg">
+            <div class="hover-overlay"></div>
+            <div class="hover-4-content">
+              <h3 class="hover-4-title mb-0"><span class="font-weight-light">Achieving
+                </span>Internal Peace</h3>
+              <p class="hover-4-description mb-0 small">With constant bombardment of information
+                and being in a state of over arousal
+                deprives our brain the time to consolidate and enhance our understanding.
+                Being thoughtless is a gift for your mind.</p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-sm hoverBtn" data-bs-toggle="modal" data-bs-target="#achievingPeace">
+                Read more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="achievingPeace" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body modalImage d-flex"
+                          style="background-image: url('./public/images/howNeuphonyHelps/vii_4ii_6_attain inner peace.png');">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body d-flex align-items-center">
+                          <div class="modalText text-dark text-center">
+                            <p>With constant bombardment of information and being in
+                              a state of
+                              over arousal
+                              deprives our brain the time to consolidate and
+                              enhance our
+                              understanding.
+                              Being thoughtless is a gift for your mind.</p>
+                            <p>Neuphony creates a brain map of your cognitive state
+                              and helps
+                            </p>
+                            <ul>
+                              <li>Create a roadmap tailored for your mind.</li>
+                              <li>Slowly guide and train your brain to take a
+                                break.</li>
+                              <li>Create awareness about the Inner working of your
+                                mind.</li>
+                              <li>Enhance the experience of your meditation
+                                session by
+                                tracking your brain
+                                activity.</li>
+                            </ul>
+                            <a href="peace.html" class="btn btn-primary exploreBtn">Explore
+                              more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 mt-md-4 text-center">
+          <div class="hover hover-4 text-white"><img src="public/images/howNeuphonyHelps/vii_4ii_5_self improvement.png"
+              alt="" class="img-fluid cardImg">
+            <div class="hover-overlay"></div>
+            <div class="hover-4-content">
+              <h3 class="hover-4-title mb-0"><span class="font-weight-light">Self
+                </span>Development</h3>
+              <p class="hover-4-description mb-0 small">Our habits are nothing but our autonomous
+                nervous system taking control over
+                our mind. We all have, at some point, made a conscious decision to make a
+                change. Ever wondered why is it so hard ?</p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-sm hoverBtn" data-bs-toggle="modal"
+                data-bs-target="#selfDevelopment">
+                Read more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="selfDevelopment" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close close d-flex align-items-center justify-content-center"
+                        data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body modalImage d-flex"
+                          style="background-image: url('public/images/howNeuphonyHelps/vii_4ii_5_self improvement.png');">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex">
+                        <div class="modal-body d-flex align-items-center">
+                          <div class="modalText text-dark text-center">
+                            <p>Our habits are nothing but our autonomous nervous
+                              system taking
+                              control over
+                              our mind. We all have, at some point, made a
+                              conscious decision
+                              to make a
+                              change. Ever wondered why is it so hard ?</p>
+                            <p>Neuphony creates a brain map of your cognitive state
+                              to help you
+                            </p>
+                            <ul>
+                              <li>Identify those autonomous programs in our mind.
+                              </li>
+                              <li>Similar to bad habits, good ones can be
+                                instilled into the
+                                subconscious.
+                              </li>
+                              <li>Recommend mindfulness meditation, and
+                                focus exercises based on your brain state.</li>
+                              <li>Help you retrain your subconscious.</li>
+                            </ul>
+                            <a href="self.html" class="btn btn-primary exploreBtn">Explore
+                              more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="album py-5">
+    <div class="container">
+      <div class="row row-col-xl-3 row-col-sm-3 row-col-md-3 row-col-xs-2 g-3" style="margin: auto;">
+        
+        <div class="col my-4" style="margin: auto;">
+          <div class="card glowed">
+            <a href="/serviceshome" class="btn">
+              <div class="card-body">
+                <p id="shadow1">Treatments</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Our Services are </small>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col" style="margin: auto;">
+          <div class="card glowed">
+            <a href="/product" class="btn">
+              <div class="card-body">
+                <p id="shadow1">Health Shots</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Our Health Products are </small>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col" style="margin: auto;">
+          <div class="card glowed">
+            <a href="/unicafe" class="btn">
+              <div class="card-body">
+                <p id="shadow1">O<sub>2</sub> Bar<br>&<br>HealthCafe</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Our Products are </small>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div> -->
+
+
+<!--Dancing Balls-->
+<!-- <div class="container bg-light p-3" style="margin: auto; border-radius: 20px;">
+  <main>
+    <div class="p-2 text-center text-white">
+        <h1 id="services" class="display-4 fw-bold shadow2 mb-0 bacg" style="font-family:Roboto;">Call for Action! <br> Free Consultation
+        </h1><center><span class="line"></span></center>
+    </div>
+</main><a data-bs-toggle="modal" data-bs-target="#consutaionModal" data-bs-dismiss="modal">
+<div class="row row-cols-xl-3 row-cols-sm-3 row-cols-md-3 row-cols-xs-6 g-3 mx-5 my-2" style="text-align: center;">
+  <div class="col">
+    <div class="ball">
+      Pain Management
+
+    </div>
+    <div class="ball-shadow"></div>
+
+  </div>
+  <div class="col">
+    <div class="ball">
+      Physio Therapy
+    </div>
+    <div class="ball-shadow"></div>
+
+  </div>
+  <div class="col">
+    <div class="ball">
+      Psoriasis
+    </div>
+    <div class="ball-shadow"></div>
+
+  </div>
+  <div class="col">
+    <div class="ball">
+      Stress Management
+    </div>
+    <div class="ball-shadow"></div>
+
+  </div>
+  <div class="col">
+    <div class="ball">
+      Diabetes Treatments
+
+    </div>
+    <div class="ball-shadow"></div>
+
+  </div>
+  <div class="col">
+    <div class="ball">
+      Alzhiemer
+    </div>
+    <div class="ball-shadow"></div>
+
+  </div>
+
+
+</div></a>
+</div> -->
+<!-- consultation details form consutaionModal-->
+<!-- <div class="modal fade" id="consutaionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered text-white">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="wrapper bg-white">
+        <button type="button" style="align-items:right;" class="btn-close bg-light" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+          <center><div><img style="align-items: center" src="{% static 'images/Lifeshots-Suchi.png'%}" alt="" height="80px"
+            width="270px"></div></center>
+        <div class="h4 text-muted text-center pt-2">Fill form for Consultation</div>
+        <form class="pt-3" action="subscribe" method="POST">{% csrf_token %}
+          <div class="form-group py-2">
+            <div class="input-field"> <span class="fas fa-user p-2"></span> <input type="text"
+                placeholder="Name" name="name" required> </div>
+          </div>
+          <div class="form-group py-2">
+            <div class="input-field"> <span class="fas fa-phone p-2"></span> <input type="text"
+                placeholder="Mobile Number" name="mobno" required> </div>
+          </div>
+          <div class="form-group py-2">
+            <div class="input-field"> <span class="fas fa-envelope p-2"></span> <input type="text" placeholder="Email"
+                name="email" required> </div>
+          </div>
+          
+          <button class="btn btn-block text-center w-100 my-3">Call Now <span class="fas fa-phone p-2"></span></button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+<!--Testimonials starts here-->
+<!-- <testmonial >
+
+  <main>
+    <div class="p-5 text-center">
+        <h1 id="services" class="display-2 fw-bold shadow2" style="font-family:Roboto;">Testinomials
+        </h1><center><span class="line"></span></center>
+    </div>
+</main>
+  <div class="testmonial container" style="display:flex;justify-content: center">
+    <div class="row ">
+
+      {% for i in testimonials %}
+      <div class="col-lg-4">
+        <div class="card" style="background:rgba(97, 97, 97, 0.571)">
+          <div class="face front-face"> <img src="{{i.testi_images}}" alt="" class="profile">
+            <div class="pt-3 text-uppercase name"> {{i.testi_name}} </div>
+            <div class="designation">{{i.testi_designation}}</div>
+          </div>
+          <div class="face back-face"> <i class="fas fa-quote-left"></i>
+            <div class="testimonial">{{i.testi_fedback}}</div> <span class="fas fa-quote-right"></span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</testmonial> -->
+
+<!-- testinomials -->
+<section id="testim" class="testim">
+  <div class="testimonialHeading"><span><img src="public/images/partition image black.png" alt="Partition Image"></span>
+    <h2>Testimonials</h2>
+    <span><img src="public/images/partition image black.png" alt="Partition Image"
+        style="transform: rotate(180deg); padding-top: 19px"></span>
+  </div>
+
+  <div class="testimonialContainer">
+    <div class="bunchOfSlides">
+      {% for i in testimonials %}
+      <div class="oneOfSlide active">
+        <div class="container slideContainer">
+          <div class="row align-items-center rowContainer">
+            <div class=" col-sm-6 text-center px-0"><img src="{{i.testi_images}}"
+                alt="Trisha Bahl" title="Trisha Bahl" class="img-fluid testimonialImage"></div>
+            <div class="col-sm-6 p-sm-0 testimonialContent">
+              <h1 class="testimonialName">{{i.testi_name}}</h1>
+              <h5 class="testimonialProfession">{{i.testi_designation}}</h5>
+              <blockquote class="testimonialQuote blockquote">
+                Brain activity was monitored during one of my meditation sessions copy
+              </blockquote>
+              <p class=" testimonialQuoteMore">{{i.testi_fedback}}.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="oneOfSlide">
+        <div class="container slideContainer">
+          <div class="row align-items-center rowContainer">
+            <div class=" col-sm-6 text-center px-0"><img src="{% static 'images/Harry_Potter_character_poster.jpeg'%}"
+                alt="Trisha Bahl" title="Trisha Bahl" class="img-fluid testimonialImage"></div>
+            <div class="col-sm-6 p-sm-0 testimonialContent">
+              <h1 class="testimonialName">Harry Potter</h1>
+              <h5 class="testimonialProfession">Communications Specialist</h5>
+              <blockquote class="testimonialQuote blockquote">
+                Brain activity was monitored during one of my meditation sessions copy
+              </blockquote>
+              <p class=" testimonialQuoteMore">A very good initiative by team Neuphony. I have
+                never
+                had such an amazing experience where my brain activity was monitored during one
+                of
+                my
+                meditation sessions. The device that the team is working on is a very novice
+                idea
+                that will
+                help people monitor their brain waves at home with ease.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="oneOfSlide">
+        <div class="container slideContainer">
+          <div class="row align-items-center rowContainer">
+            <div class=" col-sm-6 text-center px-0"><img src="{% static 'images/download.jpeg'%}" alt="Miguel leonne"
+                title="Miguel leonne" class="img-fluid testimonialImage"></div>
+            <div class="col-sm-6 p-sm-0 testimonialContent">
+              <h1 class="testimonialName">Miguel Leonne</h1>
+              <h5 class="testimonialProfession">Qiqong Meditation Instructor</h5>
+              <blockquote class="testimonialQuote blockquote">
+                Able to stay in a very focused alpha brainwave state for over 75 % of my
+                session.
+              </blockquote>
+              <p class=" testimonialQuoteMore">After over 10 years of meditation practice, it was
+                a
+                real surprise to see the results of the EEG Neuphony measurements. I could see I
+                am
+                able to stay in a very focused alpha brainwave state for over 75 % of my
+                meditation.
+                It encourages me to discover more effective ways to enter the states of
+                intuition.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="oneOfSlide">
+              <div class="container slideContainer">
+                  <div class="row align-items-center rowContainer">
+                      <div class=" col-sm-6 text-center px-0"><img
+                              src="public/images/testimonials/Kunal Joseph.jpg" alt="Kunal Joseph"
+                              title="Kunal Joseph" class="img-fluid testimonialImage"></div>
+                      <div class="col-sm-6 p-sm-0 testimonialContent">
+                          <h1 class="testimonialName">Kunal Joseph</h1>
+                          <h5 class="testimonialProfession">Yoga and meditation Instructor</h5>
+                          <blockquote class="testimonialQuote blockquote">
+                              It builds awareness and interest in the inner working of our mind.
+                          </blockquote>
+                          <p class=" testimonialQuoteMore">We are living in an age of instant feedback. The
+                              idea
+                              and team behind Neuphony are on the path, to help build awareness and interest
+                              in
+                              the inner working of our mind. A beginner or an experienced meditator, Neuphony
+                              will
+                              show you how to fine-tune your technique and find what method of meditation
+                              works
+                              best for you.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="oneOfSlide">
+              <div class="container slideContainer">
+                  <div class="row align-items-center rowContainer">
+                      <div class=" col-sm-6 text-center px-0"><img
+                              src="public/images/testimonials/Susan.png" alt="Susan Lemke"
+                              title="Susan Lemke" class="img-fluid testimonialImage"></div>
+                      <div class="col-sm-6 p-sm-0 testimonialContent">
+                          <h1 class="testimonialName">Susan Lemke</h1>
+                          <h5 class="testimonialProfession">Meditator</h5>
+                          <blockquote class="testimonialQuote blockquote">
+                              Never really felt completely relaxed, until i tried Neuphony!
+                          </blockquote>
+                          <p class=" testimonialQuoteMore">I&rsquo;ve been into meditation for 15 years now
+                              and
+                              thought that I was doing a more or less good job of it. But I never really felt
+                              completely relaxed during my meditations and this got confirmed with Neuphony
+                              that
+                              mindfulness meditation is definitely the meditation that&rsquo;s more suited to
+                              my
+                              brain waves.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="oneOfSlide">
+              <div class="container slideContainer">
+                  <div class="row align-items-center rowContainer">
+                      <div class=" col-sm-6 text-center px-0"><img
+                              src="public/images/testimonials/Tobias.png" alt="Tobias Goeppel"
+                              title="Tobias Goeppel" class="img-fluid testimonialImage">
+                      </div>
+                      <div class="col-sm-6 p-sm-0 testimonialContent">
+                          <h1 class="testimonialName">Tobias Goeppel</h1>
+                          <h5 class="testimonialProfession">Design thinking and Agile coach</h5>
+                          <blockquote class="testimonialQuote blockquote">
+                              Received incredible data insights about my brain activity
+                          </blockquote>
+                          <p class=" testimonialQuoteMore">If you can master your mind, you are able to master
+                              your actions, your thoughts and your emotions! With the help of neuphony, I
+                              received
+                              incredible data insights about my brain activity and how I am able to train it
+                              with
+                              different techniques. It helped me with my personal and business challenges as
+                              well
+                              as in my sportive challenges in the ultra-endurance area.</p>
+                      </div>
+                  </div>
+              </div>
+          </div> -->
+      <div class="navigation">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+              <!--<div class="slide-icon"></div>
+              <div class="slide-icon"></div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!------ Partners ---------->
+
+
+<!--End to End Solutions-->
+<div class="services pd m-2">
+  <div class="container">
+    <div class="px-4 py-1 my-4 text-white">
+
+      <main>
+        <div class="px-4 py-1 my-4 text-white">
+          <h1 id="services" class="display-4 fw-bold shadow2 mb-0" style="font-family:Roboto;">Testinomials
+            <span class="line"></span>
+          </h1>
+        </div>
+      </main>
+
+      <div class="row text-center mt-3">
+        <div class="col-md-3">
+          <div class="square"><i class="fas fa-code"></i></div>
+          <div class="serv">
+            <h5>Functionalities</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="serv">
+            <div class="square"><i class="fas fa-cogs"></i></div>
+            <h5>Problem Solving</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="square"><i class="fas fa-globe"></i></div>
+          <div class="serv">
+            <h5>Best Domain</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="square"><i class="fas fa-user-shield"></i></div>
+          <div class="serv">
+            <h5>Secure Website</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+
+<script src="{% static 'css1/testimo.js'%}"></script>
+<script src="{% static 'css1/jquery.min.js'%}"></script>
+<script src="{% static 'css1/basic.js'%}"></script>
+
+
+
+{% endblock %}

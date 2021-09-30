@@ -1,0 +1,127 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block csslink %}
+
+{% endblock %}
+{% block title %} Services {% endblock %}
+{% block body%}
+<style>@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+    .service-7 {
+      font-family: "Montserrat", sans-serif;
+        color: #8d97ad;
+      font-weight: 300;
+    }
+    
+    .service-7 h1, .service-7 h2, .service-7 h3, .service-7 h4, .service-7 h5, .service-7 h6 {
+      color: #3e4555;
+    }
+    
+    .service-7 .font-weight-medium {
+        font-weight: 500;
+    }
+    
+    .service-7 a {
+        text-decoration: none;
+    }
+    
+    .service-7 .linking {
+        color: #3e4555;
+    }
+    
+    .service-7 .linking:hover {
+        color: #316ce8;
+    }
+    
+    .service-7 .subtitle {
+        color: #8d97ad;
+        line-height: 24px;
+    }
+    
+    .service-7 .btn-info-gradiant {
+          background: #188ef4;
+        background: -webkit-linear-gradient(legacy-direction(to right), #188ef4 0%, #316ce8 100%);
+        background: -webkit-gradient(linear, left top, right top, from(#188ef4), to(#316ce8));
+        background: -webkit-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+        background: -o-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+        background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
+    }
+    
+    .service-7 .btn-info-gradiant:hover {
+          background: #316ce8;
+        background: -webkit-linear-gradient(legacy-direction(to right), #316ce8 0%, #188ef4 100%);
+        background: -webkit-gradient(linear, left top, right top, from(#316ce8), to(#188ef4));
+        background: -webkit-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+        background: -o-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+        background: linear-gradient(to right, #316ce8 0%, #188ef4 100%);
+    }
+    
+    .service-7 .btn-md {
+        padding: 15px 45px;
+        font-size: 16px;
+    }</style>
+
+<main>
+    <div class="p-2 my-2 text-center text-white">
+        <h1 id="services" class="display-4 fw-bold shadow2 mb-0 bacg" style="font-family:Roboto;">Our Treatments
+        </h1><center><span class="line"></span></center>
+    </div>
+<div class="py-5 service-7">
+    <div class="container">
+        <!-- Row  -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-md-4 mb-4">
+                <div class="">
+                    <img class="rounded img-fluid" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature2/market.jpg" alt="wrappixel kit" />
+                    <div class="mt-4">
+                        <h6 class="font-weight-medium">Retargeting Market</h6>
+                        <p class="mt-3">You can relay on our amazing features list and also our customer services will be great experience.</p>
+                        <a href="javascript:void(0)" class="linking">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-4 mb-4">
+                <div class="">
+                    <img class="rounded img-fluid" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature2/fruit.jpg" alt="wrappixel kit" />
+                    <div class="mt-4">
+                        <h6 class="font-weight-medium">Fruitful Results</h6>
+                        <p class="mt-3">You can relay on our amazing features list and also our customer services will be great experience.</p>
+                        <a href="javascript:void(0)" class="linking">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-4 mb-4">
+                <div class="">
+                    <img class="rounded img-fluid" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature2/instant.jpg" alt="wrappixel kit" />
+                    <div class="mt-4">
+                        <h6 class="font-weight-medium">Instant Solutions</h6>
+                        <p class="mt-3">You can relay on our amazing features list and also our customer services will be great experience.</p>
+                        <a href="javascript:void(0)" class="linking">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            {% for i in service %}
+            <div class="col-md-4 mb-4">
+                <div class="">
+                    <img class="rounded img-fluid" src="{{i.service_main_img}}" height="246px" width="373px" alt="wrappixel kit" />
+                    <div class="mt-4">
+                        <h6 class="font-weight-medium">{{i.service_name}}</h6>
+                        <h7 class="font-weight-medium">{{i.service_categary}}</h7>
+                        <p class="mt-3">{{i.service_desc|slice:":55"}}...</p>
+                        <a href="service{{i.service_id}}" class="linking">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+						<div class="col-md-12 mt-3 text-center">
+                <a class="btn btn-info-gradiant btn-md border-0 text-white"><span>Call Us</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
